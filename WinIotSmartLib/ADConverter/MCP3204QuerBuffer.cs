@@ -47,6 +47,7 @@ namespace WinIotSmartLib.ADConverter
             else
             {
                 initValues();
+                throw new System.ArgumentException("MCP3204 allows only channel Ch0 - Ch3, Requested: " + newChannel.ToString() , "newChannel");
             }
 
             return result;
