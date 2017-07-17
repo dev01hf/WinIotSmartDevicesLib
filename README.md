@@ -41,6 +41,7 @@ MCP3204QuerBuffer _QueryBuffer;
 MCP320xResultBuffer _ResultBuffer;
 
 // create objects async
+
 Tuple<MCP3204QuerBuffer, MCP320xResultBuffer, MCP3xxxConnector> MCP3204 = await MCP3xxxFactory.CreateDeviceMCP3204(MCP3xxxAdChannel.Ch0, SpiCsLine.Cs0Pin24, SpiClockFrequency.f1Mhz);
 
 _SpiConnector = MCP3204.Item3;
