@@ -33,18 +33,18 @@ MCP3xxxConnector _SpiConnector;
 MCP3204QuerBuffer _QueryBuffer;
 MCP320xResultBuffer _ResultBuffer;
 
-/* create objects async */
+// create objects async
 Tuple<MCP3204QuerBuffer, MCP320xResultBuffer, MCP3xxxConnector> MCP3204 = await MCP3xxxFactory.CreateDeviceMCP3204(MCP3xxxAdChannel.Ch0, SpiCsLine.Cs0Pin24, SpiClockFrequency.f1Mhz);
 
 _SpiConnector = MCP3204.Item3;
 _QueryBuffer = MCP3204.Item1;
 _ResultBuffer = MCP3204.Item2;
 
-_SpiConnector.ReadADC(_QueryBuffer, _ResultBuffer); /* send and receive data  */<
-int value = _ResultBuffer.Convert2Int(); /* convert yout buffer to INT */
-_ResultBuffer.CreateBuffer(); /* create a new buffer for another ReadADC operation */
+_SpiConnector.ReadADC(_QueryBuffer, _ResultBuffer); // send and receive data
+int value = _ResultBuffer.Convert2Int(); // convert yout buffer to INT
+_ResultBuffer.CreateBuffer(); // create a new buffer for another ReadADC operation
 
-_SpiConnector.Dispose(); /* if not, dispose all objects */
+_SpiConnector.Dispose(); // if not, dispose all objects 
 _QueryBuffer = null;
 _ResultBuffer = null;
 
