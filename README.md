@@ -2,6 +2,7 @@
 a smart device library for Windows IOT
 
 Release 1.0
+
 covers AD-Controller MCP3204. Your Raspberry should use lightning Provider: 
 https://developer.microsoft.com/en-us/windows/iot/docs/lightningproviders
 
