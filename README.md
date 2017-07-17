@@ -7,20 +7,12 @@ https://developer.microsoft.com/en-us/windows/iot/docs/lightningproviders
 
 To communicate with MCP3204, it is necessary to connect your device by a SPI connection:
 
-                          
-
 Raspi:3.3VDC Pin1  ->  MCP3004:VDD+VREF Pin13+14
-
-Raspi:GND Pin6  ->  MCP3004: GND+DGND Pin7+12
-
-Raspi:MOSI   Pin19                  ->Din      Pin9
-
-Raspi:MISO   Pin21                  ->Dout     Pin10
-
-Raspi:SCLK   Pin23                  ->CLK      Pin11
-
-Raspi:CE0 or CE1  Pin24|26          ->CS       Pin8
-
+Raspi:GND Pin6  ->  MCP3004:GND+DGND Pin7+12
+Raspi:MOSI Pin19  ->  MCP3004:Din Pin9
+Raspi:MISO Pin21  ->  MCP3004:Dout Pin10
+Raspi:SCLK Pin23  ->  MCP3004:CLK Pin11
+Raspi:CE0 or CE1 Pin24|26  ->  MCP3004:CS Pin8
 
 Next step, reference WinIotSmartDevicesLib in your UWP project, min. version build 14393. Have a look at your project properties at application tab.
 
