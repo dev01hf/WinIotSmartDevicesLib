@@ -14,6 +14,7 @@ namespace WinIotSmartLib.ADConverter
             Task init = Connector.InitSPIAsync(csLine, frequency);
 
             MCP3204QuerBuffer QuerBuffer = new MCP3204QuerBuffer();
+            QuerBuffer.DifferentialMode = false;
             QuerBuffer.SetChannel(channel);
 
             MCP320xResultBuffer ResultBuffer = new MCP320xResultBuffer();

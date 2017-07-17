@@ -83,7 +83,7 @@ namespace WinIotSmartLib.ADConverter
             get { return (ModeByte & 0b00000100) != 0; }
             set
             {
-                if (!value)
+                if (value)
                 {
                     ModeByte |= 0b00000100;
                 }

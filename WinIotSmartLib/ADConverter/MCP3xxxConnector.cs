@@ -26,7 +26,7 @@ namespace WinIotSmartLib.ADConverter
 
                 var settings = new SpiConnectionSettings((int)spi_CsLine);
                 settings.ClockFrequency = (int)spi_ClockFrq;   
-                settings.Mode = SpiMode.Mode0;      /* The ADC expects idle-low clock polarity so we use Mode0  */
+                settings.Mode = SpiMode.Mode0;      
 
                 if (LightningProvider.IsLightningEnabled)
                 {
