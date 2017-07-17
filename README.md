@@ -7,13 +7,20 @@ https://developer.microsoft.com/en-us/windows/iot/docs/lightningproviders
 
 To communicate with MCP3204, it is necessary to connect your device by a SPI connection:
 
-Raspi:                          MCP3004:
-3.3VDC Pin1                   ->VDD+VREF Pin13+14
-GND    Pin6                   ->GND+DGND Pin7+12
-MOSI   Pin19                  ->Din      Pin9
-MISO   Pin21                  ->Dout     Pin10
-SCLK   Pin23                  ->CLK      Pin11
-CE0 or CE1  Pin24|26          ->CS       Pin8
+                          
+
+Raspi:3.3VDC Pin1  ->  MCP3004:VDD+VREF Pin13+14
+
+Raspi:GND Pin6  ->  MCP3004: GND+DGND Pin7+12
+
+Raspi:MOSI   Pin19                  ->Din      Pin9
+
+Raspi:MISO   Pin21                  ->Dout     Pin10
+
+Raspi:SCLK   Pin23                  ->CLK      Pin11
+
+Raspi:CE0 or CE1  Pin24|26          ->CS       Pin8
+
 
 Next step, reference WinIotSmartDevicesLib in your UWP project, min. version build 14393. Have a look at your project properties at application tab.
 
@@ -42,10 +49,10 @@ _QueryBuffer = MCP3204.Item1;
 _ResultBuffer = MCP3204.Item2;
 
 _SpiConnector.ReadADC(_QueryBuffer, _ResultBuffer); /* send and receive data  */<
-int value = _ResultBuffer.Convert2Int();            /* convert yout buffer to INT */
-_ResultBuffer.CreateBuffer();                       /* create a new buffer for another ReadADC operation */
+int value = _ResultBuffer.Convert2Int(); /* convert yout buffer to INT */
+_ResultBuffer.CreateBuffer(); /* create a new buffer for another ReadADC operation */
 
-_SpiConnector.Dispose();                            /* if not, dispose all objects */
+_SpiConnector.Dispose(); /* if not, dispose all objects */
 _QueryBuffer = null;
 _ResultBuffer = null;
 
